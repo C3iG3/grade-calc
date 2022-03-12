@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Grade Calculator</title>
+
+        <style>
+            * {
+                font-family: monospace;
+            }
+
+            body > div {
+                margin-bottom: 50px;
+            }
+
+            input[type="number"] {
+                width: 75px;
+            }
+
+            .calc > div > label {
+                display: flex;
+                align-items: center;
+            }
+
+            .calc > div > label > * {
+                margin-right: 10px;
+            }
+
+            .gradebook .total,
+            .calc .grade 
+            {
+                margin-top: 20px;
+            }
+        </style>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/grade-calc.js" defer></script>
+    </head>
+    <body>
+        <div class="gradebook">
+            <h2>Gradebook Points</h2>
+            <div class="product js-container">
+                <label>
+                    <span>Product Points (50%)</span>
+                    <input type="number" name="product" value="0" min="0" />
+                    <span>1 point is worth <span class="js-point-perc">0</span>% of total grade</span>
+                </label>
+            </div>
+            <div class="process js-container">
+                <label>
+                    <span>Process Points (30%)</span>
+                    <input type="number" name="process" value="0" min="0" />
+                    <span>1 point is worth <span class="js-point-perc">0</span>% of total grade</span>
+                </label>
+            </div>
+            <div class="practice js-container">
+                <label>
+                    <span>Practice Points (20%)</span>
+                    <input type="number" name="practice" value="0" min="0" />
+                    <span>1 point is worth <span class="js-point-perc">0</span>% of total grade</span>
+                </label>
+            </div>
+            <div class="total">
+                <span>Total Points: <strong><span class="js-total">0</span></strong></span>
+            </div>
+        </div>
+
+        <div class="calc" style="display:none;">
+            <h2>Calculator</h2>
+            <div class="product js-container" style="display:none;">
+                <label>
+                    <span>Product Points</span>
+                    <input type="range" name="product" step="1" min="0" value="0" />
+                    <span class="ratio">
+                        <span class="js-numerator"></span>
+                        /
+                        <span class="js-denominator"></span>
+                    </span>
+                </label>
+            </div>
+            <div class="process js-container" style="display:none;">
+                <label>
+                    <span>Process Points</span>
+                    <input type="range" name="process" step="1" min="0" value="0" />
+                    <span class="ratio">
+                        <span class="js-numerator"></span>
+                        /
+                        <span class="js-denominator"></span>
+                    </span>
+                </label>
+            </div>
+            <div class="practice js-container" style="display:none;">
+                <label>
+                    <span>Practice Points</span>
+                    <input type="range" name="practice" step="1" min="0" value="0" />
+                    <span class="ratio">
+                        <span class="js-numerator"></span>
+                        /
+                        <span class="js-denominator"></span>
+                    </span>
+                </label>
+            </div>
+            <div class="grade">
+                <span>Grade: <strong><span class="js-grade"></span>%</strong></span>
+            </div>
+        </div>
+    </body>
+</html>
